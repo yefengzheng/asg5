@@ -170,13 +170,13 @@ if (button) {
 
 // Load .OBJ Model
 const mtlLoader = new MTLLoader();
-mtlLoader.load('models/tree.mtl', (materials) => {
+mtlLoader.load('models/Tree.mtl', (materials) => {
     materials.preload();
 
     const objLoader = new OBJLoader();
     objLoader.setMaterials(materials);
 
-    objLoader.load('models/tree.obj', (object) => {
+    objLoader.load('models/Tree.obj', (object) => {
         object.position.set(0, 2, 0);
         object.scale.set(0.5, 0.5, 0.5);
         object.traverse((child) => {
