@@ -170,13 +170,13 @@ if (button) {
 
 // Load .OBJ Model
 const mtlLoader = new MTLLoader();
-mtlLoader.load('models/Tree.mtl', (materials) => {
+mtlLoader.load('https://yefengzheng.github.io/asg5/textures/Tree.mtl', (materials) => {
     materials.preload();
 
     const objLoader = new OBJLoader();
     objLoader.setMaterials(materials);
 
-    objLoader.load('models/Tree.obj', (object) => {
+    objLoader.load('https://yefengzheng.github.io/asg5/textures/Tree.obj', (object) => {
         object.position.set(0, 2, 0);
         object.scale.set(0.5, 0.5, 0.5);
         object.traverse((child) => {
@@ -186,8 +186,9 @@ mtlLoader.load('models/Tree.mtl', (materials) => {
             }
         });
         scene.add(object);
-    })
+    });
 });
+
 
 const moveSpeed = 0.1; // Speed of movement
 const keys = { w: false, a: false, s: false, d: false, q: false, e: false, space: false, c: false, ArrowUp : false, ArrowDown : false};
